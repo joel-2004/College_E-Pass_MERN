@@ -1,7 +1,8 @@
-
+const dotenv = require("dotenv");
+dotenv.config();
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhost:27017/StudentLogin")
+mongoose.connect(process.env.MONGODB)
     .then(() => {
         console.log("MongoDB Connected");
     })

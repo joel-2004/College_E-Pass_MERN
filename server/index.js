@@ -23,16 +23,16 @@ app.get("/Students", async (req, res) => {
 });
 app.post("/StudentsLogin", async (req, res) => {
   try {
-    console.log(req.body);
+    // console.log(req.body);
     const { rollno, password } = req.body;
-    console.log(rollno + " " + password);
+    //console.log(rollno + " " + password);
     //console.log(rollno+" "+password);
     const d = await StudentsLogin.find({ rollno, password })
     if (d === null) {
       res.status(404).json({ "message": "no user" });
     }
     else {
-      console.log(d + " demo");
+      // console.log(d + " demo");
       res.status(200).json({ "message": "user found" });
     }
   } catch (err) {
@@ -41,7 +41,7 @@ app.post("/StudentsLogin", async (req, res) => {
 })
 const { StudentsLogin, StudentPersonalDetails, TutorDetails, HodDetails, WardenDetails } = require('./mongodb');
 app.post('/StudentsLogin', async (req, res) => {
-  console.log(req.body); // Log the received data
+  // console.log(req.body); // Log the received data
 
   const { rollno, password } = req.body;
 
